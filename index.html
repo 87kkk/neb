@@ -1,54 +1,235 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Музей Несбывшихся Идей</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-        .idea-card {
-            border-left: 5px solid #6c757d;
-            background-color: white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-        }
-        .idea-card h5 {
-            color: #343a40;
-        }
-        .idea-meta {
-            font-size: 0.9em;
-            color: #6c757d;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Музей Несбывшихся Идей</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Crimson+Text&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fffbea;
+      font-family: 'Roboto', sans-serif;
+      color: #4a3c1a;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      background-color: #fff3cd;
+      padding: 80px 0;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #7a5c00;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #856404;
+    }
+
+    .btn-main {
+      background-color: #ffc107;
+      color: #212529;
+      border: none;
+      padding: 12px 30px;
+      font-weight: 600;
+      border-radius: 30px;
+      font-family: 'Roboto', sans-serif;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-main:hover {
+      background-color: #e0a800;
+      transform: translateY(-2px);
+    }
+
+    .container {
+      max-width: 900px;
+      padding: 40px 15px;
+    }
+
+    .idea-card {
+      background: #fffaf0;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      padding: 25px;
+      margin-bottom: 30px;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      opacity: 0;
+      animation: fadeUp 1s ease-in-out forwards;
+    }
+
+    .idea-card:hover {
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .idea-card h5 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #5c4400;
+      margin-bottom: 15px;
+    }
+
+    .idea-card p {
+      font-size: 1rem;
+      color: #7a5900;
+      margin-bottom: 15px;
+    }
+
+    .idea-meta {
+      font-size: 0.9rem;
+      color: #a88c2d;
+    }
+
+    .idea-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+
+    .idea-buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+      justify-content: space-between;
+    }
+
+    .idea-buttons button {
+      background-color: #ffc107;
+      color: #212529;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+    .idea-buttons button:hover {
+      background-color: #e0a800;
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 0;
+      background-color: #7a5c00;
+      color: #fff6d6;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .idea-card h5 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="container py-5">
-    <h1 class="mb-4 text-center">Музей Несбывшихся Идей</h1>
-    
-    <div class="text-center mb-5">
-        <a href="#" class="btn btn-dark">Добавить свою идею</a>
+  <div class="hero">
+    <div class="container">
+      <h1>Музей Несбывшихся Идей</h1>
+      <p>Место, где собираются идеи, которые не стали реальностью, но навсегда останутся в наших сердцах.</p>
+      <a href="#" class="btn btn-main mt-4">Добавить свою идею</a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="idea-card">
+      <img src="https://via.placeholder.com/800x400?text=Кафе+и+письма" alt="Фото идеи" class="idea-image">
+      <h5>Кафе, где посетители пишут друг другу письма от руки</h5>
+      <p>Атмосферное место с чернилами и перьями. Можно оставить письмо незнакомцу или ответить на чьё-то.</p>
+      <p><strong>Почему не получилось:</strong> аренда была дорогой, и я испугалась, что никто не придёт.</p>
+      <p class="idea-meta">Добавлено: 2025-04-15</p>
+      <div class="idea-buttons">
+        <button onclick="likeIdea(this)">Лайк</button>
+        <button onclick="saveIdea(this)">Сохранить</button>
+      </div>
     </div>
 
-    <!-- Одна идея -->
-    <div class="idea-card p-4 rounded">
-        <h5>Социальная сеть для домашних растений</h5>
-        <p class="mb-2">Приложение, где люди выкладывают фото своих растений, обмениваются советами и дают имена цветам.</p>
-        <p><strong>Почему не получилось:</strong> не нашлось разработчика, сам не знал, с чего начать, и пошёл есть картошку.</p>
-        <p class="idea-meta">Добавлено: 2025-04-15</p>
+    <div class="idea-card">
+      <img src="https://via.placeholder.com/800x400?text=Комплименты+в+наушниках" alt="Фото идеи" class="idea-image">
+      <h5>Приложение, которое шепчет тебе комплименты в наушник</h5>
+      <p>Каждые 30 минут ты слышишь добрые слова от ИИ, чтобы поднять самооценку и настроение.</p>
+      <p><strong>Почему не получилось:</strong> казалось глупым, но идея до сих пор греет душу.</p>
+      <p class="idea-meta">Добавлено: 2025-04-12</p>
+      <div class="idea-buttons">
+        <button onclick="likeIdea(this)">Лайк</button>
+        <button onclick="saveIdea(this)">Сохранить</button>
+      </div>
     </div>
 
-    <div class="idea-card p-4 rounded">
-        <h5>VR-платформа для путешествий во времени</h5>
-        <p class="mb-2">Хотел создать виртуальные реконструкции исторических эпох, чтобы учить историю по-настоящему, в 3D.</p>
-        <p><strong>Почему не получилось:</strong> слишком дорого, нужен был историк, и я переключился на другой проект.</p>
-        <p class="idea-meta">Добавлено: 2025-04-10</p>
+    <div class="idea-card">
+      <img src="https://via.placeholder.com/800x400?text=Дневники+онлайн" alt="Фото идеи" class="idea-image">
+      <h5>Онлайн-архив заброшенных дневников</h5>
+      <p>Анонимно загружаешь свой старый дневник. Люди читают, находят отклик, комментируют страницами.</p>
+      <p><strong>Почему не получилось:</strong> боялся за конфиденциальность. А ведь у многих они лежат в ящике зря.</p>
+      <p class="idea-meta">Добавлено: 2025-04-10</p>
+      <div class="idea-buttons">
+        <button onclick="likeIdea(this)">Лайк</button>
+        <button onclick="saveIdea(this)">Сохранить</button>
+      </div>
     </div>
 
-    <!-- ... можно добавить ещё блоков -->
-</div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Музей Несбывшихся Идей. Каждая идея — как экспонат.
+  </div>
+
+  <script>
+    function likeIdea(button) {
+      button.textContent = button.textContent === "Лайк" ? "Вы лайкнули" : "Лайк";
+      button.style.backgroundColor = button.textContent === "Вы лайкнули" ? "#28a745" : "#ffc107";
+    }
+
+    function saveIdea(button) {
+      button.textContent = button.textContent === "Сохранить" ? "Сохранено" : "Сохранить";
+      button.style.backgroundColor = button.textContent === "Сохранено" ? "#e0a800" : "#ffc107";
+    }
+  </script>
 
 </body>
 </html>
